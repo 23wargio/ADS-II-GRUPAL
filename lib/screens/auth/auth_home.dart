@@ -17,7 +17,7 @@ class AuthHome extends StatelessWidget {
             child: Row(
               children: [
                 Image.asset(
-                  'assets/book_logo.png',
+                  'assets/images/book_logo.jfif',
                   height: 40,
                 ),
                 const SizedBox(width: 10),
@@ -90,7 +90,7 @@ class AuthHome extends StatelessWidget {
                         ),
                         clipBehavior: Clip.antiAlias,
                         child: Image.asset(
-                          'assets/writing_person.jpg',
+                          'assets/images/writing_person.avif',
                           fit: BoxFit.cover,
                         ),
                       ),
