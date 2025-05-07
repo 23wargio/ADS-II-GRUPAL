@@ -1,4 +1,4 @@
-// lib/screens/actividades_tareas_screen.dart
+// lib/screens/actividades_tareas_screen.dartjosue
 import 'package:flutter/material.dart';
 
 class ActividadesTareasScreen extends StatelessWidget {
