@@ -6,7 +6,7 @@ if (!isset($_GET['id'])) {
    header("Location: dashboard.php");
    exit();
 }
-
+//main
 $stmt = $pdo->prepare("SELECT * FROM posts WHERE id = ? AND author_id = ?");
 $stmt->execute([$_GET['id'], $_SESSION['user_id']]);
 $post = $stmt->fetch();
