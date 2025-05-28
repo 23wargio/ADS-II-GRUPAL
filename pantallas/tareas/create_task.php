@@ -1,5 +1,5 @@
 <?php
-require '../conexion/config.php';
+require '../../conexion/config.php';
 session_start();
 
 // Función para redireccionarhbgtbgyibygh

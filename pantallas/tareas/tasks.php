@@ -1,5 +1,5 @@
 <?php
-require '../conexion/config.php';
+require '../../conexion/config.php';
 session_start();
 
 // Mostrar mensaje flash si existe
@@ -139,10 +139,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_task'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tareas - Zidkenu</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <?php include '../estructura/header.php'; ?>
+    <?php include '../../estructura/header.php'; ?>
     <div id="flash-message-container" style="position: fixed; top: 20px; right: 20px; z-index: 1000;"></div>
     
     <div class="container">
@@ -271,7 +271,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_task'])) {
         <?php endif; ?>
     </div>
     
-    <?php include '../estructura/footer.php'; ?>
+    <?php include '../../estructura/footer.php'; ?>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {

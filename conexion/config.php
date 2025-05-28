@@ -1,4 +1,5 @@
 <?php
+define('BASE_URL', 'http://localhost/proyectozidkenu/');
 $host = 'localhost';
 $db = 'db_zidkenu';
 $user = 'root';
