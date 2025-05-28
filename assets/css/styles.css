@@ -1,0 +1,73 @@
+/* Estilos generales */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    padding: 20px 0;
+}
+
+/* Navbar personalizado */
+nav .brand-logo {
+    font-size: 1.5rem;
+    padding-left: 10px;
+}
+
+/* Cards */
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card .card-content .card-title {
+    margin-bottom: 20px;
+}
+
+/* Tablas */
+table.highlight tbody tr:hover {
+    background-color: rgba(25, 118, 210, 0.1) !important;
+}
+
+/* Badges */
+.badge {
+    margin-right: 5px;
+}
+
+/* Botones */
+.btn, .btn-large, .btn-small {
+    border-radius: 4px;
+}
+
+.btn i, .btn-large i, .btn-small i {
+    vertical-align: middle;
+}
+
+/* Input fields */
+.input-field {
+    margin-top: 0;
+}
+
+.input-field .prefix {
+    color: #1565c0;
+}
+
+/* Modal */
+.modal {
+    border-radius: 8px;
+    max-height: 90%;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 600px) {
+    nav .brand-logo {
+        font-size: 1.2rem;
+    }
+    
+    .fixed-action-btn {
+        bottom: 45px;
+        right: 24px;
+    }
+}
