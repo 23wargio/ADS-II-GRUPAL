@@ -8,7 +8,7 @@ function redirect($location) {
     exit();
 }
 
-// Función para establecer mensaje flash
+// Función para establecer mensaje flashsfsdfsdf
 function set_flash_message($type, $message) {
     $_SESSION['flash_message'] = [
         'type' => $type,
