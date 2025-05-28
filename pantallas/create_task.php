@@ -2,13 +2,13 @@
 require '../conexion/config.php';
 session_start();
 
-// Función para redireccionar
+// Función para redireccionarhbgtbgyibygh
 function redirect($location) {
     header("Location: $location");
     exit();
 }
 
-// Función para establecer mensaje flash
+// Función para establecer mensaje flashsfsdfsdf
 function set_flash_message($type, $message) {
     $_SESSION['flash_message'] = [
         'type' => $type,
