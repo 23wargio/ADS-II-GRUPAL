@@ -250,8 +250,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_task'])) {
                     <?php endif; ?>
                     
                     <?php if ($userRole === 'admin' || $task['created_by'] == $userId): ?>
-                        <div class="task-actions">
+                        <div class="task-actions" style="display: flex; gap: 10px; align-items: center;">
                             <a href="edit_task.php?id=<?= $task['id'] ?>" class="edit-btn" style="text-decoration: none; display: inline-block;">Editar</a>
+                            - <?php if ($userRole === 'admin' || $userRole === 'manager'): ?>
+                                <a href="eliminar_task.php?id=<?= $task['id'] ?>" 
+                                class="delete-btn" 
+                                style="text-decoration: none; display: inline-block;"
+                                onclick="return confirm('¿Estás seguro de que quieres eliminar esta tarea?');">
+                                Eliminar
+                                </a>
+                            <?php endif; ?>
                         </div>
                     <?php endif; ?>
                 </div>
