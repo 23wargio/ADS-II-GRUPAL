@@ -178,10 +178,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_task'])) {
                 </select>
                 
                 <button type="submit" class="filter-button">Filtrar</button>
-                <a href="tasks.php" class="filter-button" style="text-decoration: none; display: inline-block; background-color: #6c757d;">Limpiar</a>
+                <a href="tasks.php" class="filter-button" style="text-align: center ;text-decoration: none; display: inline-block; background-color: #6c757d;">Limpiar</a>
                 
                 <?php if ($userRole === 'admin' || $userRole === 'manager'): ?>
-                <a href="create_task.php" class="filter-button" style="text-decoration: none; display: inline-block; background-color: #28a745;">Nueva Tarea</a>
+                <a href="create_task.php" class="filter-button" style="text-align: center; text-decoration: none; display: inline-block; background-color: #28a745;">Nueva Tarea</a>
                 <?php endif; ?>
             </form>
         </div>
