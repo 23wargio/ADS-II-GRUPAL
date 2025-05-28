@@ -2,7 +2,7 @@
 require '../conexion/config.php';
 session_start();
 
-// Función para redireccionar
+// Función para redireccionarhbgtbgyibygh
 function redirect($location) {
     header("Location: $location");
     exit();
