@@ -7,14 +7,19 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+
 // Obtener datos actuales del usuario
+
 $stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
 $stmt->execute([$_SESSION['user_id']]);
 $user = $stmt->fetch();
 
 // Procesar formulario de actualización
+
 $error = '';
 $success = '';
+
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validar y sanitizar datos
