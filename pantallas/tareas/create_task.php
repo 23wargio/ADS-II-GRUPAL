@@ -159,11 +159,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Tarea - Zidkenu</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <?php include '../estructura/header.php'; ?>
+    <?php include '../../estructura/header.php'; ?>
     
     <div class="container">
         <div class="form-container">
@@ -284,7 +284,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
     
-    <?php include '../estructura/footer.php'; ?>
+    <?php include '../../estructura/footer.php'; ?>
     
     <script>
         // Validación del formulario en el cliente

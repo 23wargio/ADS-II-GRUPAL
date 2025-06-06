@@ -1,5 +1,5 @@
 <?php
-require '../conexion/config.php';
+require '../../conexion/config.php';
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
@@ -164,10 +164,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Tarea - Zidkenu</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <?php include '../estructura/header.php'; ?>
+    <?php include '../../estructura/header.php'; ?>
     
     <div class="container">
         <div class="form-container">
@@ -272,7 +272,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
     
-    <?php include '../estructura/footer.php'; ?>
+    <?php include '../../estructura/footer.php'; ?>
     
     <script>
         function updateProgressBar(value) {

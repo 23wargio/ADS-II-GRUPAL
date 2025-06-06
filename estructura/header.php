@@ -47,7 +47,7 @@ if (!file_exists($localPath)) {
 
                 <div class="dropdown-content" id="userDropdown">
                     <p style="padding: 12px 16px; margin: 0; color: var(--dark-color);"><?= htmlspecialchars($user['email'] ?? '') ?></p>
-                    <a href="edit_perfil.php"><i class="fas fa-user-edit" style="margin-right: 8px;"></i> Editar perfil</a>
+                    <a href="<?= BASE_URL ?>pantallas/edit_perfil.php"><i class="fas fa-user-edit" style="margin-right: 8px;"></i> Editar perfil</a>
                     <a href="<?= BASE_URL ?>logout/logout.php"><i class="fas fa-sign-out-alt" style="margin-right: 8px;"></i> Cerrar sesión</a>
                 </div>
             </div>

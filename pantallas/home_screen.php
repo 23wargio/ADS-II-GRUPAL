@@ -500,7 +500,7 @@ $teams = $teams_stmt->fetchAll();
                         </div>
                         
                         <div class="task-actions">
-                            <a href="../tareas/edit_task.php?id=<?= $task['id'] ?>" class="btn" style="padding: 5px 10px; font-size: 0.8rem;">
+                            <a href="./tareas/edit_task.php?id=<?= $task['id'] ?>" class="btn" style="padding: 5px 10px; font-size: 0.8rem;">
                                 <i class="fas fa-edit"></i>
                             </a>
                         </div>
@@ -522,7 +522,7 @@ $teams = $teams_stmt->fetchAll();
                         <div class="team-name"><?= htmlspecialchars($team['name']) ?></div>
                         <div class="team-meta"><?= htmlspecialchars($team['description']) ?></div>
                     </div>
-                    <a href="../equipos/view_team.php?id=<?= $team['id'] ?>" class="btn" style="padding: 5px 10px;">
+                    <a href="team_members.php?id=<?= $team['id'] ?>" class="btn" style="padding: 5px 10px;">
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
