@@ -1,5 +1,5 @@
 <?php
-require '../conexion/config.php';
+require '../../conexion/config.php';
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Proyecto</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <style>
         .form-group {
             margin-bottom: 15px;
@@ -126,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
     
 <body>
-    <?php include '../estructura/header.php'; ?>
+    <?php include '../../estructura/header.php'; ?>
 
     <div class="form-container">
         <h1>Crear Nuevo Proyecto</h1>
@@ -210,6 +210,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
 
-    <?php include '../estructura/footer.php'; ?>
+    <?php include '../../estructura/footer.php'; ?>
 </body>
 </html>

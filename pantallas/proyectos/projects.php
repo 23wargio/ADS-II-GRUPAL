@@ -1,5 +1,5 @@
 <?php
-require '../conexion/config.php';
+require '../../conexion/config.php';
 session_start();
 
 // Mostrar mensaje flash si existe
@@ -121,10 +121,10 @@ if ($userRole == 'admin') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyectos - Zidkenu</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <?php include '../estructura/header.php'; ?>
+    <?php include '../../estructura/header.php'; ?>
     <div id="flash-message-container" style="position: fixed; top: 200px; right: 200px; z-index: 1000;"></div>
     <h1>Bienvenido a Proyectos</h1>
     <div class="section-header">
@@ -183,13 +183,13 @@ if ($userRole == 'admin') {
                     <?php endif; ?>
                 </div>
                 <div class="project-footer">
-                    <a href="project_detail.php?id=<?= $project['id'] ?>">Ver detalles</a>
+                    <a href="edit_project.php?id=<?= $project['id'] ?>">Editar Proyecto</a>
                 </div>
             </div>
             <?php endforeach; ?>
         </div>
         <?php endif; ?>
     </div>
-    <?php include '../estructura/footer.php'; ?>
+    <?php include '../../estructura/footer.php'; ?>
 </body>
 </html>
