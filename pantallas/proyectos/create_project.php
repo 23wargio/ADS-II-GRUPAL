@@ -45,6 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validaciones básicas
     if (empty($name) || empty($manager_id) || empty($start_date) || empty($status) || empty($priority)) {
         $error = "Nombre, Manager, Fecha de inicio, Estado y Prioridad son obligatorios.";
+    } else if (strtotime($end_date) && strtotime($start_date) && strtotime($end_date) < strtotime($start_date)) {
+        // Verificar si la fecha fin es anterior a la fecha inicio
+        $error = "La fecha de finalización no puede ser anterior a la fecha de inicio.";
     } else {
         try {
             $pdo->beginTransaction();
@@ -67,13 +70,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             // Redirigir a la lista de proyectos
             header("Location: projects.php");
-            exit(); // Aseguramos que el script se detenga después de la redirección
+            exit();
 
         } catch (Exception $e) {
             // En caso de error, hacer rollback y mostrar el error
             $pdo->rollBack();
             $error = "Error al crear el proyecto: " . $e->getMessage();
-            echo $error; // Esto imprimirá el error en pantalla, puedes eliminarlo una vez lo depures
             exit(); // Evitar que el script continúe
         }
     }

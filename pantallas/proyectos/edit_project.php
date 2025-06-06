@@ -174,12 +174,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
 
                 <div class="form-group">
-                    <label for="status">Estado</label>
-                    <select id="status" name="status" required>
-                        <option value="active" <?= $project['status'] == 'active' ? 'selected' : '' ?>>Activo</option>
-                        <option value="inactive" <?= $project['status'] == 'inactive' ? 'selected' : '' ?>>Inactivo</option>
+                    <label for="status">Estado *</label>
+                    <select name="status" required>
+                        <option value="planning">Planificación</option>
+                        <option value="in_progress">En progreso</option>
+                        <option value="on_hold">En espera</option>
+                        <option value="completed">Completado</option>
+                        <option value="cancelled">Cancelado</option>
                     </select>
                 </div>
+
                 
                 <div class="form-group">
                     <label for="priority">Prioridad</label>
