@@ -189,6 +189,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="form-group">
                 <label for="status">Estado *</label>
                 <select name="status" required>
+                    <option value="">Seleccione el Estado</option>
                     <option value="planning">Planificación</option>
                     <option value="in_progress">En progreso</option>
                     <option value="on_hold">En espera</option>
