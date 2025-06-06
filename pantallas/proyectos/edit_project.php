@@ -191,7 +191,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Actualizar Proyecto</button>
-                <button href="projects.php" type="submit" class="btn btn-secondary">Cancelar</button>
+                <a href="projects.php" class="btn" style="background: #6c757d;">Cancelar</a>
             </form>
         </div>
     </div>

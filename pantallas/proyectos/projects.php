@@ -26,7 +26,6 @@ $userRole = $user['role'];
 
 // Consulta de proyectos según el rol
 if ($userRole == 'admin') {
-    // Los administradores ven todos los proyectos
     $stmt = $pdo->query("SELECT p.*, c.name as client_name, u.nombres as manager_name, u.apellidos as manager_lastname 
                         FROM projects p 
                         LEFT JOIN clients c ON p.client_id = c.id 
@@ -34,7 +33,6 @@ if ($userRole == 'admin') {
                         ORDER BY p.start_date DESC");
     $projects = $stmt->fetchAll();
 } elseif ($userRole == 'manager') {
-    // Los managers ven los proyectos que gestionan
     $stmt = $pdo->prepare("SELECT p.*, c.name as client_name, u.nombres as manager_name, u.apellidos as manager_lastname 
                         FROM projects p 
                         LEFT JOIN clients c ON p.client_id = c.id 
@@ -44,7 +42,6 @@ if ($userRole == 'admin') {
     $stmt->execute([$userId]);
     $projects = $stmt->fetchAll();
 } else {
-    // Los miembros ven los proyectos en los que están asignados
     $stmt = $pdo->prepare("SELECT p.*, c.name as client_name, u.nombres as manager_name, u.apellidos as manager_lastname 
                         FROM projects p 
                         LEFT JOIN clients c ON p.client_id = c.id 
@@ -110,7 +107,6 @@ if ($userRole == 'admin') {
     $stmt = $pdo->query("SELECT id, nombres, apellidos FROM users WHERE role = 'admin' OR role = 'manager' ORDER BY nombres");
     $managers = $stmt->fetchAll();
 } else {
-    // Si es manager, solo se puede asignar a sí mismo
     $managers[] = $user;
 }
 ?>
@@ -128,10 +124,11 @@ if ($userRole == 'admin') {
     <div id="flash-message-container" style="position: fixed; top: 200px; right: 200px; z-index: 1000;"></div>
     <h1>Bienvenido a Proyectos</h1>
     <div class="section-header">
-            <?php if ($userRole == 'admin' || $userRole == 'manager'): ?>
+        <?php if ($userRole == 'admin' || $userRole == 'manager'): ?>
             <a href="create_project.php"><button id="btn-new-project" class="btn-create">Nuevo Proyecto</button></a>
-            <?php endif; ?>
-        </div>
+        <?php endif; ?>
+    </div>
+
     <div class="container">
         <?php if (empty($projects)): ?>
         <div class="no-projects">
@@ -182,14 +179,28 @@ if ($userRole == 'admin') {
                     </div>
                     <?php endif; ?>
                 </div>
-                <div class="project-footer">
-                    <a href="edit_project.php?id=<?= $project['id'] ?>">Editar Proyecto</a>
-                </div>
+                <?php if ($userRole == 'admin' || $userRole == 'manager'): ?>
+                    <div class="project-footer">
+                        <a href="edit_project.php?id=<?= $project['id'] ?>" class="btn-edit">Editar Proyecto</a>
+                    </div>
+                    <div class="project-footer">
+                        <a href="javascript:void(0);" onclick="confirmDelete(<?= $project['id'] ?>)" class="btn-delete">Eliminar Proyecto</a>            
+                    </div>
+                <?php endif; ?>
             </div>
             <?php endforeach; ?>
         </div>
         <?php endif; ?>
     </div>
+
+    <script>
+        function confirmDelete(projectId) {
+            if (confirm("¿Estás seguro de que deseas eliminar este proyecto? Esta acción no se puede deshacer.")) {
+                window.location.href = "eliminar_project.php?id=" + projectId;
+            }
+        }
+    </script>
+
     <?php include '../../estructura/footer.php'; ?>
 </body>
 </html>

@@ -732,6 +732,10 @@ h1 {
     color: #000000;
 }
 
+a.btn-delete {
+    color: #f70000;
+}
+
 .update-status-form {
     margin-top: 10px;
     padding: 10px;
