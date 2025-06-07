@@ -25,7 +25,7 @@ if (!file_exists($localPath)) {
 <body>
     <header class="navbar">
         <div class="logo-container">
-            <img src="<?= BASE_URL ?>assets/img/zidkenu_logo.png" alt="Zidkenu Logo" class="logo-img">
+            <a href="<?= BASE_URL ?>./pantallas/home_screen.php"><img src="<?= BASE_URL ?>assets/img/zidkenu_logo.png" alt="Zidkenu Logo" class="logo-img"></a>
             <div>
                 <span class="logo-slogan">Soluciones Empresariales</span>
             </div>
