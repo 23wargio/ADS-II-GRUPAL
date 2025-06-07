@@ -251,7 +251,7 @@ $teams = $teams_stmt->fetchAll();
                             <div class="team-name"><?= htmlspecialchars($team['name']) ?></div>
                             <div class="team-meta"><?= htmlspecialchars($team['description']) ?></div>
                         </div>
-                        <a href="team_members.php?id=<?= $team['id'] ?>" class="btn" style="padding: 8px 12px;">
+                        <a href="./equipos/team_members.php?id=<?= $team['id'] ?>" class="btn" style="padding: 8px 12px;">
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
