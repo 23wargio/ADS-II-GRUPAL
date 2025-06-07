@@ -1,5 +1,5 @@
 <?php
-require '../conexion/config.php';
+require '../../conexion/config.php';
 
 // Iniciar sesión si no se ha iniciado
 if (session_status() == PHP_SESSION_NONE) {
@@ -201,54 +201,89 @@ function get_role_badge($role) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipos - Zidkenu</title>
-    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
     <style>
         .team-container {
             width: 95%;
             margin: 0 auto;
+            padding: 20px;
         }
-        
+
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
-            align-items: start;
+            align-items: stretch; /* Cambiado de 'start' a 'stretch' para igualar alturas */
         }
-        
+
         .team-card {
             transition: transform 0.3s, box-shadow 0.3s;
-            height: 100%;
             display: flex;
             flex-direction: column;
+            height: 100%; /* Asegura que todas las cards tengan la misma altura */
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden; /* Para bordes redondeados en todos los elementos */
         }
-        
+
         .team-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
-        
+
+        .card-body {
+            flex: 1; /* Hace que el cuerpo de la card ocupe el espacio disponible */
+            padding: 1.25rem;
+        }
+
+        .card-footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+            padding: 0.75rem 1.25rem;
+        }
+
+        /* Asegurar que las pestañas no afecten el layout */
+        .nav-tabs {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
         .nav-tabs .nav-link {
             color: #6c757d;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin-right: 0.5rem;
         }
-        
+
         .nav-tabs .nav-link.active {
-            color: #007bff;
-            border-color: #007bff;
+            color: #0d6efd;
+            background-color: transparent;
+            border-bottom: 2px solid #0d6efd;
         }
-        
-        .modal-backdrop {
-            z-index: 1040;
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
         }
-        
-        .modal {
-            z-index: 1050;
+
+        @media (max-width: 576px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-container {
+                padding: 10px;
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <?php include '../estructura/header.php'; ?>
+    <?php include '../../estructura/header.php'; ?>
 
     <?php if ($flash_message): ?>
         <div id="flash-message-container">
@@ -259,7 +294,7 @@ function get_role_badge($role) {
         </div>
     <?php endif; ?>
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="team-container">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h1><i class="fas fa-users"></i> Equipos</h1>
@@ -414,7 +449,7 @@ function get_role_badge($role) {
         </div>
     </div>
 
-    <?php include '../estructura/footer.php'; ?>
+    <?php include '../../estructura/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>

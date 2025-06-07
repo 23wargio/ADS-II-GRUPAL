@@ -1,5 +1,5 @@
 <?php
-require '../conexion/config.php';
+require '../../conexion/config.php';
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -133,12 +133,12 @@ function get_role_badge($role) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miembros del Equipo - <?= htmlspecialchars($team['name']) ?></title>
-    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <?php include '../estructura/header.php'; ?>
+    <?php include '../../estructura/header.php'; ?>
 
     <?php if ($flash_message): ?>
         <div class="alert alert-<?= $flash_message['type'] ?> text-center">
@@ -159,7 +159,7 @@ function get_role_badge($role) {
             <?php foreach ($members as $member): ?>
                 <div class="card member-card <?= 'role-' . $member['role'] ?>">
                     <div class="card-body d-flex align-items-center">
-                        <img src="<?= htmlspecialchars($member['foto_perfil'] ?? '../img/default-avatar.png') ?>" 
+                        <img src="<?= BASE_URL . '/' . htmlspecialchars($member['foto_perfil'] ?? '../img/default-avatar.png') ?>" 
                              class="rounded-circle avatar-lg me-3" alt="Avatar">
                         <div>
                             <h5 class="card-title mb-0"><?= htmlspecialchars($member['nombres'] . ' ' . $member['apellidos']) ?></h5>
@@ -186,6 +186,6 @@ function get_role_badge($role) {
         </div>
     </div>
 
-    <?php include '../estructura/footer.php'; ?>
+    <?php include '../../estructura/footer.php'; ?>
 </body>
 </html>
