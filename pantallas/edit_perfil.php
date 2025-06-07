@@ -287,7 +287,7 @@ function resizeImage($file, $w, $h, $crop = true) {
 
         <form action="edit_perfil.php" method="post" enctype="multipart/form-data">
             <div class="profile-picture">
-                <img src="<?= htmlspecialchars($user['foto_perfil']) ?>" alt="Foto de perfil">
+                <img src="<?= BASE_URL . '/' . htmlspecialchars($user['foto_perfil']) ?>" alt="Foto de perfil">
                 <div class="form-group">
                     <label for="foto_perfil">Cambiar foto de perfil:</label>
                     <input type="file" name="foto_perfil" accept="image/jpeg,image/png,image/gif,image/webp">
@@ -321,7 +321,7 @@ function resizeImage($file, $w, $h, $crop = true) {
             </div>
 
             <button type="submit" class="btn">Guardar Cambios</button>
-            <a href="home_screen.php" class="btn" style="background: #6c757d;">Cancelar</a>
+            <a href="<?= BASE_URL ?>pantallas/home_screen.php" class="btn" style="background: #6c757d;">Cancelar</a>
         </form>
     </div>
     <?php include '../estructura/footer.php'; ?>

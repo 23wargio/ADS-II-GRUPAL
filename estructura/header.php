@@ -35,7 +35,7 @@ if (!file_exists($localPath)) {
             <a href="<?= BASE_URL ?>./pantallas/home_screen.php"><i class="fas fa-home"></i> Inicio</a>
             <a href="<?= BASE_URL ?>./pantallas/proyectos/projects.php"><i class="fas fa-project-diagram"></i> Proyectos</a>
             <a href="<?= BASE_URL ?>./pantallas/tareas/tasks.php"><i class="fas fa-tasks"></i> Tareas</a>
-            <a href="<?= BASE_URL ?>./pantallas/equipos/team.php"><i class="fas fa-users"></i> Equipo</a>
+            <a href="<?= BASE_URL ?>./pantallas/equipos/team.php"><i class="fas fa-users"></i> Equipos</a>
             <a href="<?= BASE_URL ?>./pantallas/reportes/reports.php"><i class="fas fa-chart-bar"></i> Reportes</a>
         </nav>
         
